@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinator Application</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- Background -->
+<div class="bg-animation">
+    <div class="floating-shapes">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+    </div>
+</div>
+
+<!-- Container -->
+<div class="login-container">
+    <div class="login-box">
+
+        <!-- LEFT PANEL -->
+        <div class="login-left">
+            <div class="brand-content">
+                <div class="logo-icon">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <h1>Coordinator Application</h1>
+                <p>Apply to organize and manage events</p>
+
+                <div class="features-list">
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Leadership Role</span></div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Certificate Eligible</span></div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Skill Development</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="login-right">
+            <div class="login-form-container">
+
+                <div class="form-header">
+                    <h2>Apply as Coordinator</h2>
+                    <p>Fill the form carefully</p>
+                </div>
+
+                <form class="login-form">
+
+                    <!-- AUTO FILLED -->
+                    <div class="input-group">
+                        <input id="eventName" readonly>
+                    </div>
+
+                    <div class="input-group">
+                        <input id="subEventName" readonly>
+                    </div>
+
+                    <!-- USER INPUT -->
+                    <div class="input-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" placeholder="College Name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" placeholder="Department / Year" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" placeholder="Email ID" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="tel" placeholder="Mobile Number" required>
+                    </div>
+
+                    <button class="login-btn" type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Submit Application</span>
+                    </button>
+
+                </form>
+
+                <div class="form-footer">
+                    <p>Your application status will be updated by the President</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const eventName = params.get("event") || "Event";
+const subEvent = params.get("sub") || "Sub Event";
+
+document.getElementById("eventName").value = "Event : " + eventName.replaceAll("_", " ");
+document.getElementById("subEventName").value = "Sub Event : " + subEvent.replaceAll("_", " ");
+</script>
+
+</body>
+</html>
